@@ -28,9 +28,9 @@ const Home = () => {
       if (filterColors.length) {
         const text = filterColors[0]?.color;
         const colorName = text?.split(" ");
-        if (colorName && colorName[1]) {
+        if (colorName && colorName[colorName.length-1]) {
           const nameFilter = colors.filter((el) =>
-            el.color.includes(colorName[1].toLowerCase())
+            el.color.includes(colorName[colorName.length-1].toLowerCase())
           );
           if (nameFilter && nameFilter.length) {
             setSearchResult(nameFilter);
